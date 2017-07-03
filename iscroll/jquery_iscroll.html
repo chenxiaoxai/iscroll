@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="css/jquery_scroll.css">
+</head>
+<body>
+	<div class="wrapper" style="display: block;">
+		<div class="wrapper_main">
+			<section class="main_content"  style="">
+				<header class="content_header">头部</header>
+				<section class="content_main" id="iscroll_wrap" style="">
+					<div style="padding-bottom: 10px;">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, nostrum, aperiam. Optio id, fuga soluta magni nam, ipsam? Voluptatum eligendi cumque, illo incidunt optio perferendis suscipit enim, veniam repellat minima.
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit voluptatem eos obcaecati mollitia quis recusandae. Cupiditate debitis deleniti vitae deserunt officiis accusamus explicabo quaerat quam ipsa, praesentium pariatur accusantium eveniet?
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, nostrum, aperiam. Optio id, fuga soluta magni nam, ipsam? Voluptatum eligendi cumque, illo incidunt optio perferendis suscipit enim, veniam repellat minima.
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit voluptatem eos obcaecati mollitia quis recusandae. Cupiditate debitis deleniti vitae deserunt officiis accusamus explicabo quaerat quam ipsa, praesentium pariatur accusantium eveniet?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, nostrum, aperiam. Optio id, fuga soluta magni nam, ipsam? Voluptatum eligendi cumque, illo incidunt optio perferendis suscipit enim, veniam repellat minima.
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit voluptatem eos obcaecati mollitia quis recusandae. Cupiditate debitis deleniti vitae deserunt officiis accusamus explicabo quaerat quam ipsa, praesentium pariatur accusantium eveniet?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, nostrum, aperiam. Optio id, fuga soluta magni nam, ipsam? Voluptatum eligendi cumque, illo incidunt optio perferendis suscipit enim, veniam repellat minima.
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit voluptatem eos obcaecati mollitia quis recusandae. Cupiditate debitis deleniti vitae deserunt officiis accusamus explicabo quaerat quam ipsa, praesentium pariatur accusantium eveniet?
+						<div style="border:1px solid red;height: 20px;"></div>
+					</div>
+				</section>
+				<footer class="content_footer">
+					<strong>
+						加粗
+					</strong>
+				</footer>
+			</section>
+		</div>
+	</div>
+	<!-- iscroll 4.2.5版本 -->
+	<script src="js/iScroll_4.2.5.js"></script>
+	<!-- iscroll  5.2.0版本 -->
+	<script src="js/iscroll_5.2.0.js"></script>
+	<script>
+	function loaded() {
+		// iscroll 5.2.0版本
+    	myScroll1 = new IScroll('#iscroll_wrap', {
+            useTransition: true,		//启用css3加速
+            mouseWheel: true,			//是否监听鼠标滚轮事件
+            onRefresh:function(){
+                console.log("初次加载");
+            },
+            onScrollMove:function(){
+                console.log("移动中")
+            },
+            onScrollEnd:function(){
+                console.log("移动结束");
+            },
+            onScrollStart:function(){
+            	console.log("开始滚动");
+            },
+           	scroll:function(){
+           		console.log("滚动中");
+           	},
+           	scrollEnd:function(){
+           		console.log("滚动结束");
+           	}
+        });
+     	//iscroll 4.2.5版本
+        // myScroll1 = new iScroll('iscroll_wrap', {
+        //     useTransition: true,		//启用css3加速
+        //     mouseWheel: true,
+        //     onRefresh:function(){
+        //         console.log("初次加载");
+        //     },
+        //     onScrollStart:function(){
+        //     	console.log("开始滚动");
+        //     },
+        //     onScrollMove:function(){
+        //         console.log("滚动中");
+        //         console.log(this);
+        //        	console.log(this.y);
+        //        	console.log(this.maxScrollY);
+        //     },
+        //     onScrollEnd:function(){
+        //         console.log("移动结束");
+        //     	console.log(this.y);
+        //        	console.log(this.maxScrollY);
+        //     }
+        // });
+	}
+
+	document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+	document.addEventListener('DOMContentLoaded', loaded, false);
+	</script>
+</body>
+</html>
